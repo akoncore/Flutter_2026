@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         switch (settings.name) {
           case Routes.student:
             final student = settings.arguments as Student;
-            return MaterialPageRoute(
+            return MaterialPageRoute<Student>(
               builder: (_) => DetailScreen(student: student),
             );
 

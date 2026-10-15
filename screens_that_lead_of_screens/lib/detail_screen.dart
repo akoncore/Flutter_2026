@@ -32,8 +32,13 @@ class _DetailScreenState extends State<DetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        Navigator.of(context).pop(_student);
+      },
+      child: Scaffold(
       appBar: AppBar(
         title: Text(_student.name),
         actions: [
@@ -53,6 +58,7 @@ class _DetailScreenState extends State<DetailScreen> {
           ListTile(leading: Icon(Icons.email), title: Text(_student.email)),
         ],
       ),
+    ),
     );
   }
 }

@@ -12,9 +12,19 @@ class EditScreen extends StatefulWidget {
 }
 
 class _EditScreenState extends State<EditScreen> {
-  late String _name = widget.student.name;
+  late final TextEditingController _controller =
+      TextEditingController(text: widget.student.name);
+  bool _saved = false;
 
-  bool get _dirty => _name != widget.student.name;
+  String get _name => _controller.text.trim();
+
+  bool get _dirty => !_saved && _name != widget.student.name;
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,18 +68,22 @@ class _EditScreenState extends State<EditScreen> {
           child: Column(
             children: [
               TextField(
+                controller: _controller,
                 decoration: const InputDecoration(
                   labelText: 'Student name',
                   hintText: 'Enter a new name',
                   border: OutlineInputBorder(),
                 ),
-                onChanged: (v) => setState(() => _name = v),
+                onChanged: (_) => setState(() {}),
               ),
               const SizedBox(height: 16),
               FilledButton(
-                onPressed: () {
-                  Navigator.of(context).pop(_name);
-                },
+                onPressed: _name.isEmpty
+                    ? null
+                    : () {
+                        _saved = true;
+                        Navigator.of(context).pop(_name);
+                      },
                 child: const Text('Save'),
               ),
             ],
