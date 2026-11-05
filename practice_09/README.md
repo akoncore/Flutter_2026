@@ -1,17 +1,49 @@
-# shop
+# Practice 9 Put It High Subscribe Low
 
-A new Flutter project.
+Flutter кітап дүкені. Бес деңгейдің бастапқы нұсқасы `lifted` коммитінде,
+соңғы нұсқасы provider арқылы жасалған. Толық түсіндірме мен нақты өлшеулер
+`NOTES.md` файлында берілген.
 
-## Getting Started
+## Іске қосу
 
-This project is a starting point for a Flutter application.
+Flutter 3.47.4 және Dart 3.13.3 нұсқаларымен тексерілді.
 
-A few resources to get you started if this is your first Flutter project:
+```sh
+flutter pub get
+flutter run -d chrome
+```
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Android эмуляторы немесе телефон қосылғанда `flutter run` қолданыңыз.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Тексеру
+
+```sh
+dart format .
+flutter analyze
+flutter test
+flutter build web
+```
+
+## Мүмкіндіктер
+
+- Алты кітап, тақырып пен автор бойынша іздеу.
+- Add және Added күйлері, сәтті қосылғанда SnackBar.
+- Екі экранға ортақ себет, қайталанатын кітаптарды қоспау.
+- Кітап санын көбейту, өшіру және жалпы соманы есептеу.
+- Clear cart растау диалогы және соманы жасыру не көрсету.
+- Тек қажет виджеттерге жазылу, select және Consumer.child.
+- Модельді, экрандарды және қайта құрылу санын тексеретін 7 тест.
+
+## Git тарихы
+
+```sh
+git log --oneline
+git show c39494c:practice_09/lib/main.dart
+```
+
+`c39494c` — `lifted` коммиті. Жоба осы репозиторийдің practice_09 қалтасында орналасқан.
+
+Іске қосу алдында осы қалтаға өтіңіз: cd practice_09.
+
+Коммиттердегі Practice Author — тапсырмаға қолданылған бейтарап автор атауы.
+
