@@ -14,7 +14,7 @@ const books = [
   Book(title: 'Null Safety for Humans', author: 'B. Seitkali', price: 3100),
   Book(
     title: 'Constraints Go Down, Sizes Go Up',
-    author: 'C. Tashimova',
+    author: 'C. Kairat',
     price: 5600,
   ),
   Book(title: 'The Navigator Is a Stack', author: 'D. Alibekov', price: 2900),
